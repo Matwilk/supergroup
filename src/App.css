@@ -42,5 +42,24 @@
 }
 
 .App-img-container img {
-  width: 25%;
+  width: 25vw;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, avenir next, avenir, helvetica neue, helvetica, ubuntu, roboto, noto,
+  segoe ui, arial, sans-serif;  
+}
+
+.transitions-item {
+  overflow: hidden;
+  width: 100%;
+  color: white;
+  align-items: center;
+  font-size: 1em;
+  font-weight: 800;
+  text-transform: uppercase;
+  will-change: transform, opacity, height;
+  white-space: nowrap;
+  cursor: pointer;
+  line-height: 20px;
 }
