@@ -18,11 +18,9 @@
 }
 
 .App-img-container {
+  padding: 20px 0;
+  justify-content: center;
   display: flex;
-}
-
-.App-img-container img {
-  width: 25vw;
 }
 
 body {

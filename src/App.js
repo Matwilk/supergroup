@@ -1,5 +1,6 @@
 import React, { useRef, useState, useCallback } from 'react';
 import { useSpring, useTransition, animated } from 'react-spring';
+import {isMobileOnly} from 'react-device-detect';
 import titlegen from 'titlegen';
 import MarkovGen from 'markov-generator';
 import './App.css';
@@ -206,7 +207,7 @@ const guitarists = [
 ];
 
 const drummers = [
-  { name: 'Jack Ape', key: 50, band: MODERN_APES, img: '' },
+  { name: 'Jack Ape', key: 50, band: MODERN_APES, img: 'http://www.modernapes.band/wp-content/uploads/2020/05/Jackcrop.png' },
   {
     key: 41,
     name: 'John Bonham',
@@ -574,11 +575,11 @@ function App() {
               spare.push('Who');
             }
             break;
-          case 'Beatles':
+          case 'The Beatles':
             if (!noun) {
               noun = 'Beatles';
             } else {
-              adjective.push('Beatles');
+              spare.push('Beatles');
             }
             break;
           default:
@@ -596,9 +597,11 @@ function App() {
     }
   }
 
+  const imgSize = isMobileOnly ? '80px' : '180px';
+
   const singerProps = useSpring({
     opacity: selections[SINGER] ? 1 : 0,
-    height: '25vw',
+    height: imgSize,
     overflow: 'hidden',
     from: { opacity: 0 },
   });
@@ -606,7 +609,7 @@ function App() {
   const singerAlt = selections[SINGER] ? selections[SINGER].name : '';
   const guitarProps = useSpring({
     opacity: selections[GUITAR] ? 1 : 0,
-    height: '25vw',
+    height: imgSize,
     overflow: 'hidden',
     from: { opacity: 0 },
   });
@@ -614,7 +617,7 @@ function App() {
   const guitarAlt = selections[GUITAR] ? selections[GUITAR].name : '';
   const drummerProps = useSpring({
     opacity: selections[DRUMMER] ? 1 : 0,
-    height: '25vw',
+    height: imgSize,
     overflow: 'hidden',
     from: { opacity: 0 },
   });
@@ -622,7 +625,7 @@ function App() {
   const drummerAlt = selections[DRUMMER] ? selections[DRUMMER].name : '';
   const bassProps = useSpring({
     opacity: selections[BASS] ? 1 : 0,
-    height: '25vw',
+    height: imgSize,
     overflow: 'hidden',
     from: { opacity: 0 },
   });
@@ -656,29 +659,28 @@ function App() {
       <div className="App-img-container">
         {
           <animated.div style={singerProps}>
-            <img src={singerImg} alt={singerAlt}></img>
+            <img src={singerImg} alt={singerAlt} width={imgSize}></img>
           </animated.div>
         }
         {
           <animated.div style={guitarProps}>
-            <img src={guitarImg} alt={guitarAlt}></img>
+            <img src={guitarImg} alt={guitarAlt} width={imgSize}></img>
           </animated.div>
         }
         {
           <animated.div style={drummerProps}>
-            <img src={drummerImg} alt={drummerAlt}></img>
+            <img src={drummerImg} alt={drummerAlt} width={imgSize}></img>
           </animated.div>
         }
         {
           <animated.div style={bassProps}>
-            <img src={bassImg} alt={bassAlt}></img>
+            <img src={bassImg} alt={bassAlt} width={imgSize}></img>
           </animated.div>
         }
       </div>
       {pick && <div className='prompt'>{`Pick your ${pick}`}</div>}
       {name && <div className='prompt'>You formed...</div>}
       {transitions.map(({ item, props: { innerHeight, ...rest }, key }) => {
-        console.log('key', key);
         return (
           <animated.div className="transitions-item" key={key} style={rest}>
             <animated.div
