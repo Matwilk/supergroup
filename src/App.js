@@ -429,7 +429,6 @@ function App() {
   const [list, setList] = useState([]);
 
   const resetList = useCallback((newList) => {
-    console.log('newList', newList);
     ref.current.map(clearTimeout);
     ref.current = [];
     setList([]);
