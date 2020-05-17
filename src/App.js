@@ -19,6 +19,13 @@ const MODERN_APES = 12;
 
 const singers = [
   {
+    name: 'Matt Ape',
+    key: 13,
+    band: MODERN_APES,
+    img:
+      'http://www.modernapes.band/wp-content/uploads/2018/10/greenmatt-960x960.jpg',
+  },
+  {
     key: 1,
     name: 'Robert Plant',
     band: LED_ZEPPELIN,
@@ -101,11 +108,17 @@ const singers = [
     band: FLEETWOOD_MAC,
     img:
       'https://img.discogs.com/v0dZ9JhqH3OYS5BseHVYGI4HUts=/fit-in/300x300/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/A-76045-1252670883.jpeg.jpg',
-  },
-  { name: 'Matt Ape', key: 13, band: MODERN_APES, img: 'http://www.modernapes.band/wp-content/uploads/2018/10/greenmatt-960x960.jpg' },
+  }
 ];
 
 const guitarists = [
+  {
+    name: 'Wilko Ape',
+    key: 33,
+    band: MODERN_APES,
+    img:
+      'http://www.modernapes.band/wp-content/uploads/2018/10/redmatt-960x960.jpg',
+  },
   {
     key: 21,
     name: 'Jimmy Page',
@@ -189,11 +202,11 @@ const guitarists = [
     band: FLEETWOOD_MAC,
     img:
       'https://img.discogs.com/v0dZ9JhqH3OYS5BseHVYGI4HUts=/fit-in/300x300/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/A-76045-1252670883.jpeg.jpg',
-  },
-  { name: 'Wilko Ape', key: 33, band: MODERN_APES, img: 'http://www.modernapes.band/wp-content/uploads/2018/10/redmatt-960x960.jpg' },
+  }
 ];
 
 const drummers = [
+  { name: 'Jack Ape', key: 50, band: MODERN_APES, img: '' },
   {
     key: 41,
     name: 'John Bonham',
@@ -256,11 +269,17 @@ const drummers = [
     band: FLEETWOOD_MAC,
     img:
       'https://img.discogs.com/u5njGONRv5nH5PCIndqjvpE2rsk=/fit-in/300x300/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/A-273841-1492349177-8552.jpeg.jpg',
-  },
-  { name: 'Jack Ape', key: 50, band: MODERN_APES, img: '' },
+  }
 ];
 
 const bassists = [
+  {
+    name: 'Bob Ape',
+    key: 71,
+    band: MODERN_APES,
+    img:
+      'http://www.modernapes.band/wp-content/uploads/2018/10/yellowbob-960x960.jpg',
+  },
   {
     key: 61,
     name: 'John Paul Jones',
@@ -330,8 +349,7 @@ const bassists = [
     band: FLEETWOOD_MAC,
     img:
       'https://img.discogs.com/n1d418UKKTnXitW0Qdz929tOf1g=/fit-in/300x300/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/A-273840-1492348553-2932.jpeg.jpg',
-  },
-  { name: 'Bob Ape', key: 71, band: MODERN_APES, img: 'http://www.modernapes.band/wp-content/uploads/2018/10/yellowbob-960x960.jpg' },
+  }
 ];
 
 const bands = {
@@ -350,24 +368,56 @@ const bands = {
 };
 
 const songs = {
-  [LED_ZEPPELIN]: ['Stairway to Heaven', 'When the Levee Breaks', 'Dazed and Confused'],
-  [THE_BEATLES]: ['Lucy in the Sky With Diamonds', 'Here Comes the Sun', 'I am the Walrus'],
-  [ROLLING_STONES]: ['Sympathy for the Devil', 'You Can\`t Always Get What You Want', 'Under My THumb'],
-  [KINKS]: ['Dedicated Follower of Fashion', 'All Day and All of the Night', 'Death of a Clown'],
-  [CREAM]: ['Sunshine of your Love', 'I\'m So Glad', 'Crossroads'],
-  [PINK_FLOYD]: ['Careful with That Axe, Eugene', 'Shine on You Crazy Diamond', 'Astronomy Domine'],
-  [JIMI_HENDRIX_EXPERIENCE]: ['All Along the Watchtower', 'The Wind Cries Mary', 'Voodoo Chile'],
-  [SMALL_FACES]: ['All or Nothing', 'Here Comes the Nice', 'Ogdens Nut Gone Flake'],
+  [LED_ZEPPELIN]: [
+    'Stairway to Heaven',
+    'When the Levee Breaks',
+    'Dazed and Confused',
+  ],
+  [THE_BEATLES]: [
+    'Lucy in the Sky With Diamonds',
+    'Here Comes the Sun',
+    'I am the Walrus',
+  ],
+  [ROLLING_STONES]: [
+    'Sympathy for the Devil',
+    'You Can`t Always Get What You Want',
+    'Under My THumb',
+  ],
+  [KINKS]: [
+    'Dedicated Follower of Fashion',
+    'All Day and All of the Night',
+    'Death of a Clown',
+  ],
+  [CREAM]: ['Sunshine of your Love', "I'm So Glad", 'Crossroads'],
+  [PINK_FLOYD]: [
+    'Careful with That Axe, Eugene',
+    'Shine on You Crazy Diamond',
+    'Astronomy Domine',
+  ],
+  [JIMI_HENDRIX_EXPERIENCE]: [
+    'All Along the Watchtower',
+    'The Wind Cries Mary',
+    'Voodoo Chile',
+  ],
+  [SMALL_FACES]: [
+    'All or Nothing',
+    'Here Comes the Nice',
+    'Ogdens Nut Gone Flake',
+  ],
   [THE_WHO]: ['Pictures of Lily', 'Wont Get Fooled Again'],
-  [YARDBIRDS]: ['Train Kept a Rollin', 'Shapes of Things', 'Train Kept a Rollin'],
+  [YARDBIRDS]: [
+    'Train Kept a Rollin',
+    'Shapes of Things',
+    'Train Kept a Rollin',
+  ],
   [FLEETWOOD_MAC]: ['Man of the World', 'Black Magic Woman'],
   [MODERN_APES]: ['We Are the Monkeys', 'I am an Ape Man', 'Gorilla'],
-}
+};
 
 let pick = 'singer';
 
 function App() {
-  const ref = useRef([])
+  const ref = useRef([]);
 
   const SINGER = 0;
   const GUITAR = 1;
@@ -378,12 +428,12 @@ function App() {
   const [list, setList] = useState([]);
 
   const resetList = useCallback((newList) => {
-    console.log('newList', newList)
-    ref.current.map(clearTimeout)
-    ref.current = []
-    setList([])
-    ref.current.push(setTimeout(() => setList([...newList]), 1000))
-  }, [])
+    console.log('newList', newList);
+    ref.current.map(clearTimeout);
+    ref.current = [];
+    setList([]);
+    ref.current.push(setTimeout(() => setList([...newList]), 1000));
+  }, []);
 
   const reset = () => {
     setSelections([]);
@@ -391,10 +441,8 @@ function App() {
   };
 
   const handleClick = (name) => {
-    console.log('name', name)
     if (!selections[SINGER]) {
       pick = 'guitarist';
-      console.log('now pick', pick)
       setSelections([name]);
       resetList(guitarists);
     } else if (!selections[GUITAR]) {
@@ -411,9 +459,8 @@ function App() {
       pick = '';
     }
   };
-  
+
   if (!selections[SINGER] && !list.length) {
-    console.log('HERE?')
     setList(singers);
   }
 
@@ -442,9 +489,6 @@ function App() {
     });
 
     let noun;
-    if (bandsWeighted.find((band) => band === 'The Beatles')) {
-      noun = 'Beatles';
-    }
     const adjective = []; // e.g. Experienced
     const spare = [];
 
@@ -531,7 +575,11 @@ function App() {
             }
             break;
           case 'Beatles':
-            // already done you
+            if (!noun) {
+              noun = 'Beatles';
+            } else {
+              adjective.push('Beatles');
+            }
             break;
           default:
             break;
@@ -542,53 +590,114 @@ function App() {
 
       if (spare.length) {
         name = `${name} of ${spare.join(' ')}`;
-      }     
+      }
     } else {
       name = `erm... ${bandsWeighted[0]}`;
     }
   }
 
-  const singerProps = useSpring({opacity: selections[SINGER] ? 1 : 0, height: '25vw', overflow: 'hidden', from: {opacity: 0}});
+  const singerProps = useSpring({
+    opacity: selections[SINGER] ? 1 : 0,
+    height: '25vw',
+    overflow: 'hidden',
+    from: { opacity: 0 },
+  });
   const singerImg = selections[SINGER] ? selections[SINGER].img : '';
   const singerAlt = selections[SINGER] ? selections[SINGER].name : '';
-  const guitarProps = useSpring({opacity: selections[GUITAR] ? 1 : 0, height: '25vw', overflow: 'hidden', from: {opacity: 0}});
+  const guitarProps = useSpring({
+    opacity: selections[GUITAR] ? 1 : 0,
+    height: '25vw',
+    overflow: 'hidden',
+    from: { opacity: 0 },
+  });
   const guitarImg = selections[GUITAR] ? selections[GUITAR].img : '';
   const guitarAlt = selections[GUITAR] ? selections[GUITAR].name : '';
-  const drummerProps = useSpring({opacity: selections[DRUMMER] ? 1 : 0, height: '25vw', overflow: 'hidden', from: {opacity: 0}});
+  const drummerProps = useSpring({
+    opacity: selections[DRUMMER] ? 1 : 0,
+    height: '25vw',
+    overflow: 'hidden',
+    from: { opacity: 0 },
+  });
   const drummerImg = selections[DRUMMER] ? selections[DRUMMER].img : '';
   const drummerAlt = selections[DRUMMER] ? selections[DRUMMER].name : '';
-  const bassProps = useSpring({opacity: selections[BASS] ? 1 : 0, height: '25vw', overflow: 'hidden', from: {opacity: 0}});
+  const bassProps = useSpring({
+    opacity: selections[BASS] ? 1 : 0,
+    height: '25vw',
+    overflow: 'hidden',
+    from: { opacity: 0 },
+  });
   const bassImg = selections[BASS] ? selections[BASS].img : '';
   const bassAlt = selections[BASS] ? selections[BASS].name : '';
 
-  const transitions = useTransition(list, i => i.key, {
-    from: { opacity: 0, height: 0, innerHeight: 0, transform: 'perspective(600px) rotateX(0deg)', color: '#8fa5b6' },
+  const transitions = useTransition(list, (i) => i.key, {
+    from: {
+      opacity: 0,
+      height: 0,
+      innerHeight: 0,
+      transform: 'perspective(600px) rotateX(0deg)',
+      color: '#8fa5b6',
+    },
     enter: [
-      { opacity: 1, height: 20, innerHeight: 20 },
-      { transform: 'perspective(600px) rotateX(180deg)', color: '#28d79f' },
-      { transform: 'perspective(600px) rotateX(0deg)' },
+      { opacity: 1, height: 30, innerHeight: 30 },
+      // { transform: 'perspective(600px) rotateX(180deg)', color: '#28d79f' },
+      // { transform: 'perspective(600px) rotateX(0deg)' },
     ],
-    leave: [{ color: '#c23369' }, { innerHeight: 0 }, { opacity: 0, height: 0 }],
+    leave: [
+      { color: '#c23369' },
+      { innerHeight: 0 },
+      { opacity: 0, height: 0 },
+    ],
     // update: { color: '#28b4d7' },
-  })
+  });
 
   return (
     <div className="App">
-      <header className="App-header"></header>
+      <header className="App-header">Supergroup</header>
       <div className="App-img-container">
-        {<animated.div style={singerProps}><img src={singerImg} alt={singerAlt}></img></animated.div>}
-        {<animated.div style={guitarProps}><img src={guitarImg} alt={guitarAlt}></img></animated.div>}
-        {<animated.div style={drummerProps}><img src={drummerImg} alt={drummerAlt}></img></animated.div>}
-        {<animated.div style={bassProps}><img src={bassImg} alt={bassAlt}></img></animated.div>}
+        {
+          <animated.div style={singerProps}>
+            <img src={singerImg} alt={singerAlt}></img>
+          </animated.div>
+        }
+        {
+          <animated.div style={guitarProps}>
+            <img src={guitarImg} alt={guitarAlt}></img>
+          </animated.div>
+        }
+        {
+          <animated.div style={drummerProps}>
+            <img src={drummerImg} alt={drummerAlt}></img>
+          </animated.div>
+        }
+        {
+          <animated.div style={bassProps}>
+            <img src={bassImg} alt={bassAlt}></img>
+          </animated.div>
+        }
       </div>
-      {pick && `Pick your ${pick}`}
-      {transitions.map(({ item, props: { innerHeight, ...rest }, key }) => { console.log('key', key); return (
-        <animated.div className="transitions-item" key={key} style={rest}>
-          <animated.div onClick={() => handleClick(item)} style={{ overflow: 'hidden', height: innerHeight }}>{item.name}</animated.div>
-        </animated.div>
-      )})}
-      {name !== '' && `You formed ${name}`}
-      {selections.length === 4 && <div><button onClick={() => reset()}>Reform!</button></div>}
+      {pick && <div className='prompt'>{`Pick your ${pick}`}</div>}
+      {name && <div className='prompt'>You formed...</div>}
+      {transitions.map(({ item, props: { innerHeight, ...rest }, key }) => {
+        console.log('key', key);
+        return (
+          <animated.div className="transitions-item" key={key} style={rest}>
+            <animated.div
+              onClick={() => handleClick(item)}
+              style={{ overflow: 'hidden', height: innerHeight }}
+            >
+              {item.name}
+            </animated.div>
+          </animated.div>
+        );
+      })}
+      {name !== '' && (
+          <div className='band'>{name}</div>
+      )}
+      {selections.length === 4 && (
+        <div className='button' onClick={() => reset()}>
+          Reform!
+        </div>
+      )}
     </div>
   );
 }
