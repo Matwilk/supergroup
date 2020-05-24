@@ -1,8 +1,15 @@
 import React, { useRef, useState, useCallback } from 'react';
 import { useSpring, useTransition, animated } from 'react-spring';
-import {isMobileOnly} from 'react-device-detect';
-import titlegen from 'titlegen';
-import MarkovGen from 'markov-generator';
+import { isMobileOnly } from 'react-device-detect';
+import {
+  FacebookIcon,
+  TwitterIcon,
+  WhatsappIcon,
+  FacebookShareButton,
+  TwitterShareButton,
+  WhatsappShareButton
+} from 'react-share';
+
 import './App.css';
 
 const LED_ZEPPELIN = 1;
@@ -203,11 +210,16 @@ const guitarists = [
     band: FLEETWOOD_MAC,
     img:
       'https://img.discogs.com/v0dZ9JhqH3OYS5BseHVYGI4HUts=/fit-in/300x300/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/A-76045-1252670883.jpeg.jpg',
-  }
+  },
 ];
 
 const drummers = [
-  { name: 'Jack Ape', key: 50, band: MODERN_APES, img: 'http://www.modernapes.band/wp-content/uploads/2020/05/Jackcrop.png' },
+  {
+    name: 'Jack Ape',
+    key: 50,
+    band: MODERN_APES,
+    img: 'http://www.modernapes.band/wp-content/uploads/2020/05/Jackcrop.png',
+  },
   {
     key: 41,
     name: 'John Bonham',
@@ -654,7 +666,7 @@ function App() {
 
   return (
     <div className="App">
-      <header className="App-header">Supergroup</header>
+      {/* <header className="App-header">Supergroup</header> */}
       <div className="App-img-container">
         {
           <animated.div style={singerProps}>
@@ -677,8 +689,8 @@ function App() {
           </animated.div>
         }
       </div>
-      {pick && <div className='prompt'>{`Pick your ${pick}`}</div>}
-      {name && <div className='prompt'>You formed...</div>}
+      {pick && <div className="prompt">{`Pick your ${pick}`}</div>}
+      {name && <div className="prompt">You formed...</div>}
       {transitions.map(({ item, props: { innerHeight, ...rest }, key }) => {
         return (
           <animated.div className="transitions-item" key={key} style={rest}>
@@ -691,13 +703,37 @@ function App() {
           </animated.div>
         );
       })}
-      {name !== '' && (
-          <div className='band'>{name}</div>
-      )}
+      {name !== '' && <div className="band">{name}</div>}
       {selections.length === 4 && (
-        <div className='button' onClick={() => reset()}>
-          Reform!
-        </div>
+        <>
+          <div className="button" onClick={() => reset()}>
+            Reform!
+          </div>
+          <div className="share">
+            <div>Share:</div>
+            <div className="share-button">
+              <FacebookShareButton
+                url={'http://www.modernapes.band/#form-your-band'}
+                quote={`I formed the 60s supergroup "${name}" on The Modern Apes website!`}
+                hashtag={'#60s band'}
+              >
+                <FacebookIcon size="2.5rem" />
+              </FacebookShareButton>
+              <TwitterShareButton
+                title={`I formed the 60s supergroup "${name}" on The Modern Apes website! http://www.modernapes.band/#form-your-band`}
+                url={'www.modernapes.band/#form-your-band'}
+              >
+                <TwitterIcon size="2.5rem" />
+              </TwitterShareButton>
+              <WhatsappShareButton
+                title={`I formed the 60s supergroup "${name}" on The Modern Apes website!`}
+                url={'www.modernapes.band/#form-your-band'}
+              >
+                <WhatsappIcon size="2.5rem" />
+              </WhatsappShareButton>
+            </div>
+          </div>
+        </>
       )}
     </div>
   );

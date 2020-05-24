@@ -65,3 +65,14 @@ body {
 .prompt {
   padding: 20px 0;
 }
+
+.share {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px 20px;
+}
+
+.share-button {
+  padding: 5px 5px;
+}
